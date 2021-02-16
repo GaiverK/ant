@@ -1,0 +1,6 @@
+<ivy-module version="2.0">
+    <info organisation="org.apache" module="common-text"/>
+    <dependencies>
+        <dependency org="org.apache.commons" name="commons-text" rev="1.9"/>
+    </dependencies>
+</ivy-module>

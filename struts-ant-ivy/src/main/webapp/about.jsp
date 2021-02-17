@@ -1,3 +1,4 @@
+<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
 <%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
 <html:html>
 <head>
@@ -7,8 +8,8 @@
 <body>
     <div class="container text-center">
         <h1 class="h1-rule">Game rules</h1>
-        <p>Try to find a hidden number in range 0-10, the system will give you some advice after every input</p>
-        <html:link href="/" styleClass="btn btn-primary">back to game</html:link>
+        <p><bean:write name="aboutForm" property="rule"/></p>
+        <html:link href="/" styleClass="btn btn-primary"><bean:write name="aboutForm" property="buttonText"/></html:link>
     </div>
 </body>
 </html:html>

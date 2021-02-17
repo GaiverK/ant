@@ -5,16 +5,16 @@
 <struts-config>
     <form-beans>
         <form-bean name="mainForm" type="com.hayevskyi.struts.form.MainForm"/>
+        <form-bean name="aboutForm" type="com.hayevskyi.struts.form.AboutForm"/>
     </form-beans>
     <action-mappings>
         <action path="/main" name="mainForm" type="com.hayevskyi.struts.controller.MainAction" input="/index.jsp">
             <forward name="success" path="/success.jsp"/>
             <forward name="restart" path="/index.jsp"/>
         </action>
-        <action path="/about" type="com.hayevskyi.struts.controller.AboutAction" input="/about.jsp">
+        <action path="/about" name="aboutForm" type="com.hayevskyi.struts.controller.AboutAction" input="/about.jsp">
             <forward name="mainPage" path="/index.jsp"/>
         </action>
     </action-mappings>
-
     <message-resources parameter="MessageBundle"/>
 </struts-config>

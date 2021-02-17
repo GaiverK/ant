@@ -13,11 +13,17 @@
         </fileset>
     </path>
 
+    <!-- =================================
+          target: clean
+         ================================= -->
     <target name="clean">
-        <delete dir="${dist.dir}"/>
         <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
     </target>
 
+    <!-- =================================
+          target: init
+         ================================= -->
     <target name="init" depends="clean">
         <mkdir dir="${build.dir}/classes"/>
         <mkdir dir="${dist.dir}" />
@@ -30,12 +36,18 @@
         <ivy:retrieve/>
     </target>
 
+    <!-- =================================
+          target: compile
+         ================================= -->
     <target name="compile" depends="resolve">
         <javac destdir="${build.dir}/classes" debug="true" srcdir="src" includeantruntime="true">
             <classpath refid="compile.classpath"/>
         </javac>
     </target>
 
+    <!-- =================================
+          target: build
+         ================================= -->
     <target name="build" depends="compile">
         <war destfile="${dist.dir}/ROOT.war" webxml="${webxml.dir}/WEB-INF/web.xml">
             <fileset dir="${webxml.dir}"/>

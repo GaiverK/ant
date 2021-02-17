@@ -13,7 +13,8 @@
             <forward name="restart" path="/index.jsp"/>
         </action>
         <action path="/about" name="aboutForm" type="com.hayevskyi.struts.controller.AboutAction" input="/about.jsp">
-            <forward name="mainPage" path="/index.jsp"/>
+        </action>
+        <action path="/details" type="com.hayevskyi.struts.controller.DetailsAction" input="/details.jsp">
         </action>
     </action-mappings>
     <message-resources parameter="MessageBundle"/>

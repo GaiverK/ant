@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="mainForm" type="com.hayevskyi.struts.form.MainForm"/>
+    </form-beans>
+    <action-mappings>
+        <action path="/main" name="mainForm" type="com.hayevskyi.struts.controller.MainAction" input="/index.jsp">
+            <forward name="success" path="/success.jsp"/>
+            <forward name="restart" path="/index.jsp"/>
+        </action>
+        <action path="/about" type="com.hayevskyi.struts.controller.AboutAction" input="/about.jsp">
+            <forward name="mainPage" path="/index.jsp"/>
+        </action>
+    </action-mappings>
+
+    <message-resources parameter="MessageBundle"/>
+</struts-config>
